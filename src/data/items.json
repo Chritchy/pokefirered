@@ -833,12 +833,12 @@
       "secondaryId": 0
     },
     {
-      "english": "????????",
-      "itemId": "ITEM_NONE",
-      "price": 0,
+      "english": "SUN SHARD",
+      "itemId": "ITEM_SUN_SHARD",
+      "price": 200,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "?????",
+      "description_english": "A peculiar shard that enables\\ndiurnal POKéMON to evolve at any\\ntime of day.",
       "importance": 0,
       "registrability": 0,
       "pocket": "POCKET_ITEMS",
@@ -849,12 +849,12 @@
       "secondaryId": 0
     },
     {
-      "english": "????????",
-      "itemId": "ITEM_NONE",
-      "price": 0,
+      "english": "MOON SHARD",
+      "itemId": "ITEM_MOON_SHARD",
+      "price": 200,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "?????",
+      "description_english": "A peculiar shard that enables\\nnocturnal POKéMON to evolve at\\nany time of day.",
       "importance": 0,
       "registrability": 0,
       "pocket": "POCKET_ITEMS",

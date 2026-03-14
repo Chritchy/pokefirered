@@ -414,8 +414,8 @@ CableClub_EventScript_EnterTradeCenter::
 CableClub_EventScript_CheckPartyTradeRequirements::
 	specialvar VAR_RESULT, CalculatePlayerPartyCount
 	goto_if_lt VAR_RESULT, 2, CableClub_EventScript_NeedTwoMonsToTrade
-	specialvar VAR_RESULT, DoesPartyHaveEnigmaBerry
-	goto_if_eq VAR_RESULT, TRUE, CableClub_EventScript_CantTradeEnigmaBerry
+	specialvar VAR_RESULT, DoesPartyHaveBannedItem
+	goto_if_eq VAR_RESULT, TRUE, CableClub_EventScript_CantTradeBannedItem
 	setvar VAR_RESULT, TRUE
 	return
 
@@ -424,8 +424,8 @@ CableClub_EventScript_NeedTwoMonsToTrade::
 	setvar VAR_RESULT, FALSE
 	return
 
-CableClub_EventScript_CantTradeEnigmaBerry::
-	msgbox CableClub_Text_CantTradeEnigmaBerry
+CableClub_EventScript_CantTradeBannedItem::
+	msgbox CableClub_Text_CantTradeBannedItem
 	setvar VAR_RESULT, FALSE
 	return
 
@@ -803,8 +803,8 @@ CableClub_EventScript_EnterUnionRoom::
 CableClub_EventScript_CheckPartyUnionRoomRequirements::
 	specialvar VAR_RESULT, CountPartyNonEggMons
 	goto_if_lt VAR_RESULT, 2, CableClub_EventScript_NeedTwoMonsForUnionRoom
-	specialvar VAR_RESULT, DoesPartyHaveEnigmaBerry
-	goto_if_eq VAR_RESULT, TRUE, CableClub_EventScript_NoEnigmaBerryInUnionRoom
+	specialvar VAR_RESULT, DoesPartyHaveBannedItem
+	goto_if_eq VAR_RESULT, TRUE, CableClub_EventScript_NoBannedItemInUnionRoom
 	setvar VAR_RESULT, TRUE
 	return
 
@@ -813,8 +813,8 @@ CableClub_EventScript_NeedTwoMonsForUnionRoom::
 	goto EventScript_SetResultFalse
 	end
 
-CableClub_EventScript_NoEnigmaBerryInUnionRoom::
-	msgbox CableClub_Text_NoEnigmaBerryInUnionRoom
+CableClub_EventScript_NoBannedItemInUnionRoom::
+	msgbox CableClub_Text_NoBannedItemInUnionRoom
 	goto EventScript_SetResultFalse
 	end
 
@@ -1318,9 +1318,10 @@ CableClub_Text_NeedTwoMonsToTrade::
 	.string "For trading, you must have at\n"
 	.string "least two POKéMON with you.$"
 
-CableClub_Text_CantTradeEnigmaBerry::
-	.string "A POKéMON holding the {STR_VAR_1}\n"
-	.string "BERRY can't be traded.$"
+CableClub_Text_CantTradeBannedItem::
+	.string "A POKéMON holding an ENIGMA\n"
+	.string "BERRY, SUN SHARD or MOON SHARD\l"
+	.string "can't be traded.$"
 
 CableClub_Text_PleaseWaitBCancel::
 	.string "Please wait.\n"
@@ -1493,9 +1494,10 @@ CableClub_Text_NeedTwoMonsForUnionRoom::
 	.string "To enter the UNION ROOM, you must\n"
 	.string "have at least two POKéMON.$"
 
-CableClub_Text_NoEnigmaBerryInUnionRoom::
-	.string "No POKéMON holding the {STR_VAR_1}\n"
-	.string "BERRY may enter the UNION ROOM.$"
+CableClub_Text_NoBannedItemInUnionRoom::
+	.string "No POKéMON holding an ENIGMA\n"
+	.string "BERRY, SUN SHARD or MOON SHARD\l"
+	.string "may enter the UNION ROOM.$"
 
 CableClub_Text_UnionRoomAdapterNotConnected::
 	.string "This is the POKéMON WIRELESS CLUB\n"

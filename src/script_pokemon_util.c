@@ -116,13 +116,10 @@ static bool8 CheckPartyMonHasHeldItem(u16 item)
     return FALSE;
 }
 
-bool8 DoesPartyHaveEnigmaBerry(void)
+bool8 DoesPartyHaveBannedItem(void)
 {
-    bool8 hasItem = CheckPartyMonHasHeldItem(ITEM_ENIGMA_BERRY);
-    if (hasItem == TRUE)
-        GetBerryNameByBerryType(ItemIdToBerryType(ITEM_ENIGMA_BERRY), gStringVar1);
-
-    return hasItem;
+    bool8 hasItem = CheckPartyMonHasHeldItem(ITEM_ENIGMA_BERRY) || CheckPartyMonHasHeldItem(ITEM_SUN_SHARD) || CheckPartyMonHasHeldItem(ITEM_MOON_SHARD);
+        return hasItem;
 }
 
 void CreateScriptedWildMon(u16 species, u8 level, u16 item)
