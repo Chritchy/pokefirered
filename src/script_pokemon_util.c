@@ -116,10 +116,38 @@ static bool8 CheckPartyMonHasHeldItem(u16 item)
     return FALSE;
 }
 
-bool8 DoesPartyHaveBannedItem(void)
+static bool8 CheckPartyMonHasMultiplayerBannedItem(void)
 {
-    bool8 hasItem = CheckPartyMonHasHeldItem(ITEM_ENIGMA_BERRY) || CheckPartyMonHasHeldItem(ITEM_SUN_SHARD) || CheckPartyMonHasHeldItem(ITEM_MOON_SHARD);
-        return hasItem;
+    int i;
+
+    for(i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+        u16 item = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
+        if (species != SPECIES_NONE && species != SPECIES_EGG && (item == ITEM_ENIGMA_BERRY || item > ITEM_SAPPHIRE))
+            {
+                VarSet(VAR_TEMP_1, item);
+                return TRUE;
+            }
+    }
+    return FALSE;
+}
+
+bool8 DoesPartyHaveEnigmaBerry(void)
+{
+    bool8 hasItem = CheckPartyMonHasHeldItem(ITEM_ENIGMA_BERRY);
+    if (hasItem == TRUE)
+        GetBerryNameByBerryType(ItemIdToBerryType(ITEM_ENIGMA_BERRY), gStringVar1);
+
+    return hasItem;
+}
+
+bool8 DoesPartyHaveMultiplayerBannedItem(void)
+{
+    bool8 hasItem = CheckPartyMonHasMultiplayerBannedItem();
+    if (hasItem == TRUE)
+
+    return hasItem;
 }
 
 void CreateScriptedWildMon(u16 species, u8 level, u16 item)

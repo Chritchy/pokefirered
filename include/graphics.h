@@ -2900,8 +2900,6 @@ extern const u32 gItemIconPalette_RedShard[];
 extern const u32 gItemIconPalette_BlueShard[];
 extern const u32 gItemIconPalette_YellowShard[];
 extern const u32 gItemIconPalette_GreenShard[];
-extern const u32 gItemIconPalette_SunShard[];
-extern const u32 gItemIconPalette_MoonShard[];
 extern const u32 gItemIcon_HPUp[];
 extern const u32 gItemIconPalette_HPUp[];
 extern const u32 gItemIcon_Vitamin[];
@@ -3289,6 +3287,12 @@ extern const u32 gItemIconPalette_PowderJar[];
 extern const u32 gItemIcon_Gem[];
 extern const u32 gItemIconPalette_Ruby[];
 extern const u32 gItemIconPalette_Sapphire[];
+
+// Custom items
+extern const u32 gItemIconPalette_SunShard[];
+extern const u32 gItemIconPalette_MoonShard[];
+extern const u32 gItemIcon_LinkingCord[];
+extern const u32 gItemIconPalette_LinkingCord[];
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 

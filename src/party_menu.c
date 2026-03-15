@@ -5329,8 +5329,6 @@ u8 GetItemEffectType(u16 item)
     const u8 *itemEffect;
     u32 statusCure;
 
-    if (!IS_POKEMON_ITEM(item))
-        return ITEM_EFFECT_NONE;
     // Read the item's effect properties.
     if (item == ITEM_ENIGMA_BERRY)
         itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;

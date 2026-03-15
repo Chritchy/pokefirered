@@ -53,8 +53,8 @@
 #define ITEM_BLUE_SHARD 49
 #define ITEM_YELLOW_SHARD 50
 #define ITEM_GREEN_SHARD 51
-#define ITEM_SUN_SHARD 52
-#define ITEM_MOON_SHARD 53
+#define ITEM_034 52
+#define ITEM_035 53
 #define ITEM_036 54
 #define ITEM_037 55
 #define ITEM_038 56
@@ -445,7 +445,12 @@
 #define ITEM_RUBY 373
 #define ITEM_SAPPHIRE 374
 
-#define ITEMS_COUNT 375
+// Custom items
+#define ITEM_SUN_SHARD 375
+#define ITEM_MOON_SHARD 376
+#define ITEM_LINKING_CORD 377
+
+#define ITEMS_COUNT 378
 
 #define ITEM_TO_BERRY(itemId)(((itemId - FIRST_BERRY_INDEX) + 1))
 #define MAIL_NONE 0xFF
@@ -457,8 +462,5 @@
 #define OLD_ROD   0
 #define GOOD_ROD  1
 #define SUPER_ROD 2
-
-// Check if the item is one that can be used on a Pokemon.
-#define IS_POKEMON_ITEM(item) ((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX)
 
 #endif  // GUARD_CONSTANTS_ITEMS_H

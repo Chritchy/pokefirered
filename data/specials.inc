@@ -347,7 +347,8 @@ gSpecials::
 	def_special IsMonOTNameNotPlayers
 	def_special NullFieldSpecial
 	def_special Dummy_TryEnableBravoTrainerBattleTower
-	def_special DoesPartyHaveBannedItem
+	def_special DoesPartyHaveEnigmaBerry
+	def_special DoesPartyHaveMultiplayerBannedItem
 	def_special NullFieldSpecial
 	def_special SetPostgameFlags
 	def_special StartMarowakBattle

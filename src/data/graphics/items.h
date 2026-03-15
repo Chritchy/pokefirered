@@ -128,8 +128,6 @@ const u32 gItemIconPalette_RedShard[] = INCBIN_U32("graphics/items/icon_palettes
 const u32 gItemIconPalette_BlueShard[] = INCBIN_U32("graphics/items/icon_palettes/blue_shard.gbapal.lz");
 const u32 gItemIconPalette_YellowShard[] = INCBIN_U32("graphics/items/icon_palettes/yellow_shard.gbapal.lz");
 const u32 gItemIconPalette_GreenShard[] = INCBIN_U32("graphics/items/icon_palettes/green_shard.gbapal.lz");
-const u32 gItemIconPalette_SunShard[] = INCBIN_U32("graphics/items/icon_palettes/sun_shard.gbapal.lz");
-const u32 gItemIconPalette_MoonShard[] = INCBIN_U32("graphics/items/icon_palettes/moon_shard.gbapal.lz");
 
 // Vitamins
 
@@ -713,3 +711,9 @@ const u32 gItemIconPalette_PowderJar[] = INCBIN_U32("graphics/items/icon_palette
 const u32 gItemIconPalette_Ruby[] = INCBIN_U32("graphics/items/icon_palettes/ruby.gbapal.lz");
 const u32 gItemIcon_Gem[] = INCBIN_U32("graphics/items/icons/gem.4bpp.lz");
 const u32 gItemIconPalette_Sapphire[] = INCBIN_U32("graphics/items/icon_palettes/sapphire.gbapal.lz");
+
+// Custom items
+const u32 gItemIconPalette_SunShard[] = INCBIN_U32("graphics/items/icon_palettes/sun_shard.gbapal.lz");
+const u32 gItemIconPalette_MoonShard[] = INCBIN_U32("graphics/items/icon_palettes/moon_shard.gbapal.lz");
+const u32 gItemIcon_LinkingCord[] = INCBIN_U32("graphics/items/icons/linking_cord.4bpp.lz");
+const u32 gItemIconPalette_LinkingCord[] = INCBIN_U32("graphics/items/icon_palettes/linking_cord.gbapal.lz");

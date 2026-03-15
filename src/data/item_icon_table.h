@@ -56,8 +56,8 @@ static const u32 *const sItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_YELLOW_SHARD]   = {gItemIcon_Shard, gItemIconPalette_YellowShard},
     [ITEM_GREEN_SHARD]    = {gItemIcon_Shard, gItemIconPalette_GreenShard},
     // ????????
-    [ITEM_SUN_SHARD]      = {gItemIcon_Shard, gItemIconPalette_SunShard},
-    [ITEM_MOON_SHARD]     = {gItemIcon_Shard, gItemIconPalette_MoonShard},
+    [ITEM_034]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_035]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_036]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_037]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_038]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
@@ -398,6 +398,10 @@ static const u32 *const sItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_POWDER_JAR]     = {gItemIcon_PowderJar, gItemIconPalette_PowderJar},
     [ITEM_RUBY]           = {gItemIcon_Gem, gItemIconPalette_Ruby},
     [ITEM_SAPPHIRE]       = {gItemIcon_Gem, gItemIconPalette_Sapphire},
+// Custom items
+    [ITEM_SUN_SHARD]      = {gItemIcon_Shard, gItemIconPalette_SunShard},
+    [ITEM_MOON_SHARD]     = {gItemIcon_Shard, gItemIconPalette_MoonShard},
+    [ITEM_LINKING_CORD]   = {gItemIcon_LinkingCord, gItemIconPalette_LinkingCord},
     // Return to field arrow
     [ITEMS_COUNT]         = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };
