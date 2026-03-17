@@ -5101,10 +5101,10 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 if (gEvolutionTable[species][i].param <= beauty)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-            case EVO_FRIENDSHIP_ITEM:
-                if (gEvolutionTable[species][i].param == heldItem && friendship >= 220)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                break;
+            //case EVO_FRIENDSHIP_HELD_ITEM:
+                //if (gEvolutionTable[species][i].param == heldItem && friendship >= 220)
+                    //targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                //break;
             }
         }
         break;
