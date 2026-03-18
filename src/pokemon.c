@@ -5055,15 +5055,14 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 if (friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-            // FR/LG removed the time of day evolutions due to having no RTC.
             case EVO_FRIENDSHIP_DAY:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= 220)
+                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= 220 && !FlagGet(FLAG_SYS_MOON_FLUTE_ACTIVE))
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_NIGHT:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= 220)
+                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= 220 && !FlagGet(FLAG_SYS_SUN_FLUTE_ACTIVE))
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL:
@@ -5101,10 +5100,14 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 if (gEvolutionTable[species][i].param <= beauty)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-            //case EVO_FRIENDSHIP_HELD_ITEM:
-                //if (gEvolutionTable[species][i].param == heldItem && friendship >= 220)
-                    //targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                //break;
+            case EVO_FRIENDSHIP_SUN_FLUTE:
+                if (friendship >= 220 && FlagGet(FLAG_SYS_SUN_FLUTE_ACTIVE))
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_FRIENDSHIP_MOON_FLUTE:
+                if (friendship >= 220 && FlagGet(FLAG_SYS_MOON_FLUTE_ACTIVE))
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
             }
         }
         break;

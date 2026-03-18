@@ -3289,10 +3289,14 @@ extern const u32 gItemIconPalette_Ruby[];
 extern const u32 gItemIconPalette_Sapphire[];
 
 // Custom items
-extern const u32 gItemIconPalette_SunShard[];
-extern const u32 gItemIconPalette_MoonShard[];
 extern const u32 gItemIcon_LinkingCord[];
 extern const u32 gItemIconPalette_LinkingCord[];
+extern const u32 gItemIcon_IceStone[];
+extern const u32 gItemIconPalette_IceStone[];
+extern const u32 gItemIcon_SunFlute[];
+extern const u32 gItemIconPalette_SunFlute[];
+extern const u32 gItemIcon_MoonFlute[];
+extern const u32 gItemIconPalette_MoonFlute[];
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 

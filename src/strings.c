@@ -1338,3 +1338,5 @@ const u8 gText_DelAllCancelOk[] = _("DEL. ALL{CLEAR_TO 0x57}CANCEL{CLEAR_TO 0xA4
 const u8 gText_IsThisTheCorrectTime[] = _("Is this the correct time?");
 const u8 gText_Confirm3[] = _("CONFIRM");
 const u8 gText_Cancel4[] = _("CANCEL");
+const u8 gText_UsedVar2DiurnalEvolve[] = _("{PLAYER} used the\n{STR_VAR_2}.\pDiurnal POKéMON can evolve\nat any time of day.{PAUSE_UNTIL_PRESS}");
+const u8 gText_UsedVar2NocturnalEvolve[] = _("{PLAYER} used the\n{STR_VAR_2}.\pNocturnal POKéMON can evolve\nat any time of day.{PAUSE_UNTIL_PRESS}");

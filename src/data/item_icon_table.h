@@ -399,9 +399,10 @@ static const u32 *const sItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_RUBY]           = {gItemIcon_Gem, gItemIconPalette_Ruby},
     [ITEM_SAPPHIRE]       = {gItemIcon_Gem, gItemIconPalette_Sapphire},
 // Custom items
-    [ITEM_SUN_SHARD]      = {gItemIcon_Shard, gItemIconPalette_SunShard},
-    [ITEM_MOON_SHARD]     = {gItemIcon_Shard, gItemIconPalette_MoonShard},
     [ITEM_LINKING_CORD]   = {gItemIcon_LinkingCord, gItemIconPalette_LinkingCord},
+    [ITEM_ICE_STONE]      = {gItemIcon_IceStone, gItemIconPalette_IceStone},
+    [ITEM_SUN_FLUTE]      = {gItemIcon_SunFlute, gItemIconPalette_SunFlute},
+    [ITEM_MOON_FLUTE]     = {gItemIcon_MoonFlute, gItemIconPalette_MoonFlute},
     // Return to field arrow
     [ITEMS_COUNT]         = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

@@ -713,7 +713,14 @@ const u32 gItemIcon_Gem[] = INCBIN_U32("graphics/items/icons/gem.4bpp.lz");
 const u32 gItemIconPalette_Sapphire[] = INCBIN_U32("graphics/items/icon_palettes/sapphire.gbapal.lz");
 
 // Custom items
-const u32 gItemIconPalette_SunShard[] = INCBIN_U32("graphics/items/icon_palettes/sun_shard.gbapal.lz");
-const u32 gItemIconPalette_MoonShard[] = INCBIN_U32("graphics/items/icon_palettes/moon_shard.gbapal.lz");
 const u32 gItemIcon_LinkingCord[] = INCBIN_U32("graphics/items/icons/linking_cord.4bpp.lz");
 const u32 gItemIconPalette_LinkingCord[] = INCBIN_U32("graphics/items/icon_palettes/linking_cord.gbapal.lz");
+
+const u32 gItemIcon_IceStone[] = INCBIN_U32("graphics/items/icons/ice_stone.4bpp.lz");
+const u32 gItemIconPalette_IceStone[] = INCBIN_U32("graphics/items/icon_palettes/ice_stone.gbapal.lz");
+
+const u32 gItemIcon_SunFlute[] = INCBIN_U32("graphics/items/icons/sun_flute.4bpp.lz");
+const u32 gItemIconPalette_SunFlute[] = INCBIN_U32("graphics/items/icon_palettes/sun_flute.gbapal.lz");
+
+const u32 gItemIcon_MoonFlute[] = INCBIN_U32("graphics/items/icons/moon_flute.4bpp.lz");
+const u32 gItemIconPalette_MoonFlute[] = INCBIN_U32("graphics/items/icon_palettes/moon_flute.gbapal.lz");

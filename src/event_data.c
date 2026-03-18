@@ -55,6 +55,8 @@ void ClearTempFieldEventData(void)
     memset(gSaveBlock1Ptr->vars + ((TEMP_VARS_START - VARS_START) * 2), 0, TEMP_VARS_SIZE);
     FlagClear(FLAG_SYS_WHITE_FLUTE_ACTIVE);
     FlagClear(FLAG_SYS_BLACK_FLUTE_ACTIVE);
+    FlagClear(FLAG_SYS_SUN_FLUTE_ACTIVE);
+    FlagClear(FLAG_SYS_MOON_FLUTE_ACTIVE);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_SPECIAL_WILD_BATTLE);
     FlagClear(FLAG_SYS_INFORMED_OF_LOCAL_WIRELESS_PLAYER);

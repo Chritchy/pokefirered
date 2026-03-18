@@ -446,11 +446,12 @@
 #define ITEM_SAPPHIRE 374
 
 // Custom items
-#define ITEM_SUN_SHARD 375
-#define ITEM_MOON_SHARD 376
-#define ITEM_LINKING_CORD 377
+#define ITEM_LINKING_CORD 375
+#define ITEM_ICE_STONE 376
+#define ITEM_SUN_FLUTE 377
+#define ITEM_MOON_FLUTE 378
 
-#define ITEMS_COUNT 378
+#define ITEMS_COUNT 379
 
 #define ITEM_TO_BERRY(itemId)(((itemId - FIRST_BERRY_INDEX) + 1))
 #define MAIL_NONE 0xFF

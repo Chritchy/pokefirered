@@ -176,6 +176,8 @@ extern const u8 gText_PlayerUsedVar2[];
 extern const u8 gText_RepelEffectsLingered[];
 extern const u8 gText_UsedVar2WildLured[];
 extern const u8 gText_UsedVar2WildRepelled[];
+extern const u8 gText_UsedVar2DiurnalEvolve[];
+extern const u8 gText_UsedVar2NocturnalEvolve[];
 extern const u8 gText_BoxFull[];
 extern const u8 gText_PowderQty[];
 extern const u8 gText_PlayedPokeFluteCatchy[];

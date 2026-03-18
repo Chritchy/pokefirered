@@ -62,6 +62,7 @@ static void Task_InitTeachyTvFromField(u8 taskId);
 static void Task_UseRepel(u8 taskId);
 static void RemoveUsedItem(void);
 static void Task_UsedBlackWhiteFlute(u8 taskId);
+static void Task_UsedSunMoonFlute(u8 taskId);
 static void ItemUseOnFieldCB_EscapeRope(u8 taskId);
 static void UseTownMapFromBag(void);
 static void Task_UseTownMapFromField(u8 taskId);
@@ -603,6 +604,38 @@ void FieldUseFunc_BlackWhiteFlute(u8 taskId)
 }
 
 static void Task_UsedBlackWhiteFlute(u8 taskId)
+{
+    if (++gTasks[taskId].data[8] > 7)
+    {
+        PlaySE(SE_GLASS_FLUTE);
+        DisplayItemMessageInBag(taskId, FONT_NORMAL, gStringVar4, Task_ReturnToBagFromContextMenu);
+    }
+}
+
+void FieldUseFunc_SunMoonFlute(u8 taskId)
+{
+    ItemUse_SetQuestLogEvent(QL_EVENT_USED_ITEM, NULL, gSpecialVar_ItemId, 0xFFFF);
+    if (gSpecialVar_ItemId == ITEM_SUN_FLUTE)
+    {
+        FlagSet(FLAG_SYS_SUN_FLUTE_ACTIVE);
+        FlagClear(FLAG_SYS_MOON_FLUTE_ACTIVE);
+        CopyItemName(gSpecialVar_ItemId, gStringVar2);
+        StringExpandPlaceholders(gStringVar4, gText_UsedVar2DiurnalEvolve);
+        gTasks[taskId].func = Task_UsedSunMoonFlute;
+        gTasks[taskId].data[8] = 0;
+    }
+    else if (gSpecialVar_ItemId == ITEM_MOON_FLUTE)
+    {
+        FlagSet(FLAG_SYS_MOON_FLUTE_ACTIVE);
+        FlagClear(FLAG_SYS_SUN_FLUTE_ACTIVE);
+        CopyItemName(gSpecialVar_ItemId, gStringVar2);
+        StringExpandPlaceholders(gStringVar4, gText_UsedVar2NocturnalEvolve);
+        gTasks[taskId].func = Task_UsedSunMoonFlute;
+        gTasks[taskId].data[8] = 0;
+    }
+}
+
+static void Task_UsedSunMoonFlute(u8 taskId)
 {
     if (++gTasks[taskId].data[8] > 7)
     {
