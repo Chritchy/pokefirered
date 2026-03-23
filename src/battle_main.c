@@ -3001,6 +3001,8 @@ u8 IsRunningFromBattleImpossible(void)
     u8 side;
     s32 i;
 
+    if (!(gBattleTypeFlags & BATTLE_TYPE_LINK) && IsMonShiny(&gEnemyParty[0]) == TRUE)
+        return BATTLE_RUN_FORBIDDEN;
     if (gBattleMons[gActiveBattler].item == ITEM_ENIGMA_BERRY)
         holdEffect = gEnigmaBerries[gActiveBattler].holdEffect;
     else
