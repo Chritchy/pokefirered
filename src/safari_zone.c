@@ -59,6 +59,8 @@ void SafariZoneRetirePrompt(void)
 
 void CB2_EndSafariBattle(void)
 {
+    if (gSoftResetDisabled == TRUE)
+        gSoftResetDisabled = FALSE;
     if (gNumSafariBalls != 0)
     {
         SetMainCallback2(CB2_ReturnToField);
