@@ -1770,6 +1770,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u32 personality;
     u32 value;
     u16 checksum;
+    u8 version;
 
     ZeroBoxMonData(boxMon);
 
@@ -1817,7 +1818,11 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     value = GetCurrentRegionMapSectionId();
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
-    SetBoxMonData(boxMon, MON_DATA_MET_GAME, &gGameVersion);
+    if (FlagGet(FLAG_SYS_VERSION_OVERRIDE_FIRERED))
+        version = VERSION_FIRE_RED;
+    else if (FlagGet(FLAG_SYS_VERSION_OVERRIDE_LEAFGREEN))
+        version = VERSION_LEAF_GREEN;
+    SetBoxMonData(boxMon, MON_DATA_MET_GAME, &version);
     value = ITEM_POKE_BALL;
     SetBoxMonData(boxMon, MON_DATA_POKEBALL, &value);
     SetBoxMonData(boxMon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
@@ -6103,20 +6108,26 @@ void SetWildMonHeldItem(void)
     {
         u16 rnd = Random() % 100;
         u16 species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
+        u16 chanceNoItem = 45;
+        u16 chanceNotRare = 95;
+        if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG, 0)
+            && GetMonAbility(&gPlayerParty[0]) == ABILITY_COMPOUND_EYES)
+        {
+            chanceNoItem = 20;
+            chanceNotRare = 80;
+        }
         if (gSpeciesInfo[species].itemCommon == gSpeciesInfo[species].itemRare)
         {
             // Both held items are the same, 100% chance to hold item   
             SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
             return;
         }
-
-        if (rnd > 44)
-        {
-            if (rnd <= 94)
-                SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
-            else
-                SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
-        }
+        if (rnd < chanceNoItem)
+            return;
+        if (rnd < chanceNotRare)
+            SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
+        else
+            SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
     }
 }
 
